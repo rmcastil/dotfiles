@@ -1,0 +1,16 @@
+[user]
+        name = Ryan Castillo
+        email = rmcastil@gmail.com
+[alias]
+        co = checkout
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+[core]
+        excludesfile = ~/.gitignore
+        editor = vi
+        autocrlf = input
+[apply]
+        whitespace = nowarn

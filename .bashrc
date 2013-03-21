@@ -1,3 +1,9 @@
+# Store 
+for config_file in $(ls ~/.*.zsh)
+do
+  source $config_file
+done
+
 # Aliases
 alias vim="~/bin/mvim -v"
 

@@ -4,11 +4,13 @@ execute pathogen#infect()
 " If you really want to get crazy, you could even invoke Helptags in your vimrc.
 " I don't like to get crazy. QUOTE: tpope
 
+" --------
+" Settings
+" --------
+set number
+
 " Change leader key
 let mapleader=","
-
-" Line numbers
-set number
 
 " ------
 " Colors

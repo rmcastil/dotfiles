@@ -1,6 +1,8 @@
 " Load pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+" If you really want to get crazy, you could even invoke Helptags in your vimrc.
+" I don't like to get crazy. QUOTE: tpope
 
 " Change leader key
 let mapleader=","

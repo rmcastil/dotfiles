@@ -14,6 +14,9 @@ set history=10000
 set expandtab
 set number
 set ruler
+set autoindent
+" allows for pasting from other applications w/o autoindent
+set pastetoggle=<F2>
 
 " Change leader key
 let mapleader=","

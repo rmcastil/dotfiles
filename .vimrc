@@ -14,3 +14,8 @@ set background=dark
 colorscheme solarized
 " TODO: Install and add tomorrow theme
 
+" ------------------
+" Command-T settings
+" ------------------
+" set max window height
+let g:CommandTMaxHeight=10

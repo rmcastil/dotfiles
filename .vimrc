@@ -10,7 +10,9 @@ let mapleader=","
 " Line numbers
 set number
 
-" Syntax highlighting
+" ------
+" Colors
+" ------
 syntax enable
 set background=dark
 colorscheme solarized

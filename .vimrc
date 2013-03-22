@@ -12,3 +12,5 @@ set number
 syntax enable
 set background=dark
 colorscheme solarized
+" TODO: Install and add tomorrow theme
+

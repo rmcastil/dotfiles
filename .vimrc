@@ -22,3 +22,8 @@ let g:CommandTMaxHeight=10
 
 " Reflush (reindex) on every command-t
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+
+" rails shortcuts for views, controllers, and models folders
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>

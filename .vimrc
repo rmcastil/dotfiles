@@ -24,6 +24,7 @@ let g:CommandTMaxHeight=10
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 
 " rails shortcuts for views, controllers, and models folders
+" CREDIT: https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>

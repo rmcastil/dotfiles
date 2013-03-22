@@ -9,4 +9,6 @@ let mapleader=","
 set number
 
 " Syntax highlighting
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized

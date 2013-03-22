@@ -7,6 +7,8 @@ execute pathogen#infect()
 " --------
 " Settings
 " --------
+" allow unsaved background buffers and remember marks/undo for them
+set hidden
 set number
 
 " Change leader key

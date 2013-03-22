@@ -1,4 +1,7 @@
-" Load pathogen
+" ------------------------------------------------------------------------------ 
+" Pathogen - for managing vim runtime (ie - loading plugins)
+" ------------------------------------------------------------------------------ 
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 " If you really want to get crazy, you could even invoke Helptags in your vimrc.

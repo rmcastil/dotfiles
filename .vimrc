@@ -19,3 +19,6 @@ colorscheme solarized
 " ------------------
 " set max window height
 let g:CommandTMaxHeight=10
+
+" Reflush (reindex) on every command-t
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>

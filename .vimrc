@@ -9,7 +9,11 @@ execute pathogen#infect()
 " --------
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
+" remember more commands and search history
+set history=10000
+set expandtab
 set number
+set ruler
 
 " Change leader key
 let mapleader=","

@@ -31,6 +31,7 @@ let mapleader=","
 " show search as its being typed
 set incsearch
 set hlsearch
+set ignorecase
 " press enter to disable highlighting temporarily
 nnoremap <CR> :nohlsearch<CR><CR>
 

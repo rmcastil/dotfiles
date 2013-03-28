@@ -10,7 +10,7 @@
         interactive = auto
 [core]
         excludesfile = ~/.gitignore
-        editor = vi
+        editor = vim
         autocrlf = input
 [apply]
         whitespace = nowarn

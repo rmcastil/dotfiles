@@ -15,10 +15,8 @@ execute pathogen#infect()
 set hidden
 " remember more commands and search history
 set history=10000
-set expandtab
 set number
 set ruler
-set autoindent
 " allows for pasting from other applications w/o autoindent
 set pastetoggle=<F2>
 " Change leader key
@@ -26,6 +24,12 @@ let mapleader=","
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
+
+" ------------------------------------------------------------------------------ 
+" Tab Settings
+" ------------------------------------------------------------------------------ 
+set expandtab
+set autoindent
 
 " ------------------------------------------------------------------------------ 
 " Search

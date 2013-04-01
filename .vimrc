@@ -31,6 +31,7 @@ set t_ti= t_te=
 set expandtab
 set autoindent
 set softtabstop=2
+set shiftwidth=2
 set listchars=tab:>\ ,trail:-
 set list
 

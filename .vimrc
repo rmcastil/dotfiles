@@ -23,6 +23,9 @@ set autoindent
 set pastetoggle=<F2>
 " Change leader key
 let mapleader=","
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
 
 " ------------------------------------------------------------------------------ 
 " Search

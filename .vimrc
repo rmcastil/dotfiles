@@ -24,6 +24,8 @@ let mapleader=","
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
+" 'Y' should yank to the end of line
+map Y y$
 
 " ------------------------------------------------------------------------------ 
 " Whitespace Settings

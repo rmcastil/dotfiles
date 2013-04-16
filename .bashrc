@@ -6,6 +6,7 @@ done
 
 # Aliases
 alias vim="~/bin/mvim -v"
+alias l='ls -lG'
 
 # Rbenv Caveats
 # Enabling shims and autocompletion

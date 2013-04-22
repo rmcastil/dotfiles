@@ -15,8 +15,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Enable the ctrl+s key for reverse i search
 stty -ixon
 
+# Tab completion for git branches
+source /usr/local/etc/bash_completion.d/git-completion.bash
+
 # TODO: Function for getting into dev directory and projs quickly
 # TODO: Show current branch
 # TODO: Show current ruby
 # TODO: Switch to zsh because having to type cases in paths is a pain
-# TODO: add tab completion to git push branches

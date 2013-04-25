@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+# Turn on history for noninteractive shell
+HISTFILE=~/.bash_history
+set -o history
+
+history |
+awk '{ print $2 }' |
+sort |
+uniq -c |
+sort -r

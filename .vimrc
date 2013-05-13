@@ -27,6 +27,8 @@ let mapleader=","
 set t_ti= t_te=
 " 'Y' should yank to the end of line
 map Y y$
+" Always show the filename
+set ls=2
 
 " ------------------------------------------------------------------------------ 
 " Whitespace Settings

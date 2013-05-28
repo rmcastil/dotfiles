@@ -73,3 +73,9 @@ map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+
+" ------------------------------------------------------------------------------ 
+" Hard Mode
+" ------------------------------------------------------------------------------ 
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>

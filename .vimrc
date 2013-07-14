@@ -79,3 +79,8 @@ map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 " ------------------------------------------------------------------------------ 
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" ------------------------------------------------------------------------------ 
+" Cut to clipboard
+" ------------------------------------------------------------------------------ 
+map <leader>xl "*dd

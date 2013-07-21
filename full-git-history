@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+git rev-list --reverse HEAD |
+while read rev; do
+  echo "Do you want to continue forward through history?"
+    select yn in "Yes" "No"; do
+      case $yn in
+          Yes ) git show $rev | view -; break;;
+          No ) exit;;
+      esac
+    done
+done

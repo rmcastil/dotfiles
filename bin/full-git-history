@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+git rev-list --reverse HEAD |
+while read rev; do
+   git show $rev | view -
+done

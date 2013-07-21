@@ -2,7 +2,20 @@
 
 set -e
 
-git rev-list --reverse HEAD |
-while read rev; do
-   git show $rev | view -
-done
+function main {
+  for rev in `revisions`; do
+    echo "Do you want to progress through history?"
+    select yn in "Yes" "No"; do
+      case $yn in
+        Yes )git show $rev | view - ; break;;
+        No ) exit;;
+      esac
+    done
+  done
+}
+
+function revisions {
+  git rev-list --reverse HEAD
+}
+
+main

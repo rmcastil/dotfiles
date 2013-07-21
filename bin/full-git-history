@@ -4,10 +4,11 @@ set -e
 
 function main {
   for rev in `revisions`; do
+    git show $rev | view -
     echo "Do you want to progress through history?"
     select yn in "Yes" "No"; do
       case $yn in
-        Yes )git show $rev | view - ; break;;
+        Yes ) break;;
         No ) exit;;
       esac
     done

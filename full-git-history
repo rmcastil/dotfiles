@@ -4,11 +4,10 @@ set -e
 
 git rev-list --reverse HEAD |
 while read rev; do
-  echo "Do you want to continue forward through history?"
-    select yn in "Yes" "No"; do
-      case $yn in
-          Yes ) git show $rev | view -; break;;
-          No ) exit;;
-      esac
-    done
+  read -p "Progress through history?" yn </dev/tty
+    case $yn in
+      [Yy]* ) git show $rev | view -; break;;
+      [Nn]* ) exit;;
+      * ) echo "Please answer yes or no.";;
+    esac
 done

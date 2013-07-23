@@ -14,3 +14,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Enable the ctrl+s key for reverse i search
 stty -ixon
+
+# Load and run compinit for zsh completion
+autoload -U compinit
+compinit -i

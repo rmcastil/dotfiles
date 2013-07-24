@@ -18,3 +18,6 @@ stty -ixon
 # Load and run compinit for zsh completion
 autoload -U compinit
 compinit -i
+
+# case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

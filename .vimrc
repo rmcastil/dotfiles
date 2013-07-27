@@ -1,8 +1,6 @@
-" TODO: add remove whitespace command
 " ------------------------------------------------------------------------------ 
 " Pathogen - for managing vim runtime (ie - loading plugins)
 " ------------------------------------------------------------------------------ 
-
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 " If you really want to get crazy, you could even invoke Helptags in your vimrc.
@@ -11,7 +9,6 @@ execute pathogen#infect()
 " ------------------------------------------------------------------------------ 
 " Settings
 " ------------------------------------------------------------------------------ 
-
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
@@ -43,7 +40,6 @@ set list
 " ------------------------------------------------------------------------------ 
 " Search
 " ------------------------------------------------------------------------------ 
-
 " show search as its being typed
 set incsearch
 set hlsearch
@@ -54,7 +50,6 @@ nnoremap <CR> :nohlsearch<CR><CR>
 " ------------------------------------------------------------------------------ 
 " Colors
 " ------------------------------------------------------------------------------ 
-
 syntax enable
 set background=dark
 colorscheme solarized
@@ -63,7 +58,6 @@ colorscheme solarized
 " ------------------------------------------------------------------------------ 
 " Command-T settings
 " ------------------------------------------------------------------------------ 
-
 " set max window height
 let g:CommandTMaxHeight=10
 " Reflush (reindex) on every command-t
@@ -84,3 +78,10 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 " Cut to clipboard
 " ------------------------------------------------------------------------------ 
 map <leader>xl "*dd
+
+" ------------------------------------------------------------------------------ 
+" Store temporary files in a central spot
+" ------------------------------------------------------------------------------ 
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp

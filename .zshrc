@@ -38,5 +38,14 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
-PROMPT="[%1d]
-~ "
+setopt prompt_subst
+
+# get the name of the branch we are on
+function git_prompt_info() {
+  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  echo "${ref#refs/heads/}"
+}
+
+PROMPT='[%1d] $(git_prompt_info)
+~ '

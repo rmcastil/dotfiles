@@ -1,15 +1,14 @@
-#!/bin/bash
+#!/usr/local/bin/zsh
 
 set -e
 
 # Turn on history for noninteractive shell
-HISTFILE=~/.bash_history
-set -o history
+fc -R ~/.zsh_history
 
 command_name=$1
 
 function main {
-  history |
+  history 1 |
   body |
   calculate_totals_and_sort
 }

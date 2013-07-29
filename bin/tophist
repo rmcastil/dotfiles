@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/bash
 
 set -e
 
@@ -9,7 +9,7 @@ set -o history
 command_name=$1
 
 function main {
-  history 1 |
+  history |
   body |
   calculate_totals_and_sort
 }

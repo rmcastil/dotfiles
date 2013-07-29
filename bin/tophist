@@ -3,7 +3,7 @@
 set -e
 
 # Turn on history for noninteractive shell
-HISTFILE=~/.bash_history
+HISTFILE=~/.zsh_history
 set -o history
 
 command_name=$1

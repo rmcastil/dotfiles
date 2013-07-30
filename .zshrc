@@ -30,6 +30,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 setopt appendhistory
+setopt extendedhistory
 setopt hist_expire_dups_first
 setopt hist_ignore_dups # ignore duplication command history list
 setopt hist_ignore_space

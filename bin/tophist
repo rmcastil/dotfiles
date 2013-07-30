@@ -10,6 +10,7 @@ command_name=$1
 
 function main {
   history |
+  remove_time_stamp |
   body |
   calculate_totals_and_sort
 }
@@ -21,18 +22,19 @@ function calculate_totals_and_sort {
   head
 }
 
+function remove_time_stamp {
+  awk '{ $1=""; $2=""; print; }' |
+  sed 's/.*;//g'
+}
+
 function body {
   if [ -n "$command_name" ]
   then
-    awk '{ $1=""; print; }' |
     grep "$command_name" |
-    awk '{ print $1, $2 }'
+    awk '{ print $2 }'
+  else
+    awk '{ print }'
   fi
-  print_second_argument
-}
-
-function print_second_argument {
-  awk '{ print $2 }'
 }
 
 main

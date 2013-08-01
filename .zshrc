@@ -7,6 +7,7 @@ done
 # Aliases
 alias vim="~/bin/mvim -v"
 alias l='ls -laG'
+alias gs='git status'
 
 # Rbenv Caveats
 # Enabling shims and autocompletion

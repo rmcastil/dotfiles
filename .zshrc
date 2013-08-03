@@ -20,6 +20,9 @@ stty -ixon
 autoload -U compinit
 compinit -i
 
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select=2
+
 # case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 

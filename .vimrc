@@ -38,6 +38,12 @@ set listchars=tab:>\ ,trail:-
 set list
 
 " ------------------------------------------------------------------------------ 
+function! StripWhitespace()
+  exec ':%s/\s\+$//gc'
+endfunction
+map ,s :call StripWhitespace()<CR>
+
+" ------------------------------------------------------------------------------
 " Search
 " ------------------------------------------------------------------------------ 
 " show search as its being typed

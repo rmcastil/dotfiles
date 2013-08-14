@@ -8,6 +8,8 @@ done
 alias vim="~/bin/mvim -v"
 alias l='ls -laG'
 alias gs='git status'
+alias h='cd ~/'
+alias d='cd ~/dev'
 
 # Rbenv Caveats
 # Enabling shims and autocompletion
@@ -22,6 +24,7 @@ compinit -i
 
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
+zstyle ":completion:*:descriptions" format "%B%d%b"
 
 # case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

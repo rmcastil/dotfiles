@@ -45,6 +45,9 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
+# spell correct commands
+setopt correct
+
 setopt prompt_subst
 
 # get the name of the branch we are on

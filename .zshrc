@@ -48,6 +48,7 @@ setopt share_history
 # spell correct commands
 setopt correct
 
+# Prompt setup
 setopt prompt_subst
 
 # get the name of the branch we are on

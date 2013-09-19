@@ -3,4 +3,5 @@
 set -e
 
 cd $GTD
-mvim -v *.txt
+leader_f='nnoremap <leader>f 0ax'
+mvim -v *.txt -c ":e todo.txt" -c "$leader_f"

@@ -89,3 +89,12 @@ map <leader>xl "*dd
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" ------------------------------------------------------------------------------
+" Running Tests
+" ------------------------------------------------------------------------------
+let g:rspec_command = "!bundle exec rspec {spec}"
+map <Leader>c :wa\|:call RunCurrentSpecFile()<CR>
+map <Leader>s :wa\|:call RunNearestSpec()<CR>
+map <Leader>r :wa\|:call RunLastSpec()<CR>
+map <Leader>a :wa\|:call RunAllSpecs()<CR>

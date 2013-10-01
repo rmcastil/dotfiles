@@ -93,7 +93,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " ------------------------------------------------------------------------------
 " Running Tests
 " ------------------------------------------------------------------------------
-let g:rspec_command = "!bundle exec rspec {spec}"
+let g:rspec_command = "!time zeus test {spec}"
 map <Leader>c :wa\|:call RunCurrentSpecFile()<CR>
 map <Leader>s :wa\|:call RunNearestSpec()<CR>
 map <Leader>r :wa\|:call RunLastSpec()<CR>

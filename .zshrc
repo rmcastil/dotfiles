@@ -36,6 +36,9 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
+# Force user to type exit or logout
+setopt ignoreeof
+
 # spell correct commands
 setopt correct
 

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+# From Andrew Culver's dotfiles
+function pgr() {
+  if (( $# == 0 )); then
+    wget -O database.tmp `heroku pgbackups:url`
+  else
+    wget -O database.tmp `heroku pgbackups:url --app $1`
+  fi
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d `cat config/database.yml | grep "database:" | grep "dev" | sed 's/database://' | sed 's/ //g' | tr -d '\n'` database.tmp
+  rm database.tmp
+}
+
+pgr

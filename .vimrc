@@ -26,6 +26,9 @@ set t_ti= t_te=
 map Y y$
 " Always show the filename
 set ls=2
+" For folder specific vimrc's
+set exrc
+set secure
 
 " ------------------------------------------------------------------------------
 " Whitespace Settings

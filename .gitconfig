@@ -3,6 +3,7 @@
         email = rmcastil@gmail.com
 [alias]
         co = checkout
+        iteration = log --pretty='tformat:%h (%ar) -- %d %s' --since='2 weeks ago' --author='rmcastil'
 [color]
         diff = auto
         status = auto

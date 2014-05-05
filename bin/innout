@@ -2,4 +2,4 @@
 
 set -e
 
-wc -l $GTD/*.txt | awk '/total/ {print $1}'
+wc -l $GTD_DIR/*.txt | awk '/total/ {print $1}'

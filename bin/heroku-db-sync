@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+remote=$1
+
+git ls-remote "$remote" | grep HEAD | git checkout `awk '{ print $1 }'`
+#git ls-remote production | some script that retrieves the sha | git co
+#heroku pgbackups:capture -r production
+#curl -o latest.dump `heroku pgbackups:url -r production`
+# feed the database name into the next line
+#pg_restore --verbose --clean --no-acl --no-owner -h localhost -d recognize latest.dump

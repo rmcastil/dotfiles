@@ -1,0 +1,39 @@
+#!/bin/bash
+
+set -e
+
+if [ $# -lt 1 ]; then
+  echo "usage: $(basename $0) <git_remote_name>" >&2
+  echo "example: heroku-db-sync production" >&2
+  exit 1
+fi
+
+remote=$1
+
+function development_db_name() {
+  cat config/database.yml |
+  grep development --after-context=3 |
+  grep database |
+  awk '{ print $2 }'
+}
+
+function checkout_remote_repo_sha() {
+  git ls-remote "$remote" |
+  grep HEAD |
+  git checkout `awk '{ print $1 }'`
+}
+
+function restore_remote_db() {
+  heroku pgbackups:capture -r "$remote"
+  curl -o latest.dump `heroku pgbackups:url -r $remote`
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d `development_db_name` latest.dump
+}
+
+function main() {
+  checkout_remote_repo_sha
+  # ignore pg restore errors with the '|| true'
+  restore_remote_db || true
+  rm latest.dump
+}
+
+main

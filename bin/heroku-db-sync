@@ -8,25 +8,25 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
-remote=$1
+readonly REMOTE=$1
 
 function development_db_name() {
-  cat config/database.yml |
-  grep development --after-context=3 |
-  grep database |
-  awk '{ print $2 }'
+  cat config/database.yml | \
+    grep development --after-context=3 | \
+    grep database | \
+    awk '{ print $2 }'
 }
 
 function checkout_remote_repo_sha() {
-  git ls-remote "$remote" |
-  grep HEAD |
-  git checkout `awk '{ print $1 }'`
+  git ls-remote "$REMOTE" | \
+    grep HEAD | \
+    git checkout $(awk '{ print $1 }')
 }
 
 function restore_remote_db() {
-  heroku pgbackups:capture -r "$remote"
-  curl -o latest.dump `heroku pgbackups:url -r $remote`
-  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d `development_db_name` latest.dump
+  heroku pgbackups:capture -r "$REMOTE"
+  curl -o latest.dump $(heroku pgbackups:url -r $REMOTE)
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d $(development_db_name) latest.dump
 }
 
 function main() {

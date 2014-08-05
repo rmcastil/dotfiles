@@ -101,3 +101,15 @@ map <Leader>c :wa\|:call RunCurrentSpecFile()<CR>
 map <Leader>s :wa\|:call RunNearestSpec()<CR>
 map <Leader>r :wa\|:call RunLastSpec()<CR>
 map <Leader>a :wa\|:call RunAllSpecs()<CR>
+
+" ------------------------------------------------------------------------------
+" Writing
+" ------------------------------------------------------------------------------
+func WordProcessorMode()
+  map j gj
+  map k gk
+  set wrap
+  set linebreak
+  set nolist
+endfu
+com! WP call WordProcessorMode()

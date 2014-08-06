@@ -3,7 +3,7 @@ alias vim="~/bin/mvim -v"
 alias l='ls -laG'
 alias gs='git status'
 alias h='cd ~/'
-alias d='cd ~/dev'
+alias d='cd $CODE'
 alias restart_pow='touch tmp/restart.txt'
 
 # Enable the ctrl+s key for reverse i search

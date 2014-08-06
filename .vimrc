@@ -43,7 +43,7 @@ set list
 function! StripWhitespace()
   exec ':%s/\s\+$//gc'
 endfunction
-map <leader>s :call StripWhitespace()<CR>
+map <leader>ws :call StripWhitespace()<CR>
 
 " ------------------------------------------------------------------------------
 " Search

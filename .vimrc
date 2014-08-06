@@ -111,5 +111,6 @@ func WordProcessorMode()
   set wrap
   set linebreak
   set nolist
+  set spell
 endfu
 com! WP call WordProcessorMode()

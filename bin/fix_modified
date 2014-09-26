@@ -1,0 +1,1 @@
+git status | ack "both modified" | awk '{ $1=""; $2=""; print; }' | xargs -o vim

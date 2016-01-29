@@ -17,6 +17,7 @@ function development_db_name() {
     awk '{ print $2 }'
 }
 
+# want the rest of the script to fail if checkout fails
 function checkout_remote_repo_sha() {
   git ls-remote "$REMOTE" | \
     grep HEAD | \
@@ -24,6 +25,7 @@ function checkout_remote_repo_sha() {
 }
 
 function restore_remote_db() {
+  # need a flag to not backup
   heroku pg:backups capture -r "$REMOTE"
   curl -o latest.dump $(heroku pg:backups public-url -r $REMOTE)
   pg_restore --verbose --clean --no-acl --no-owner -h localhost -d $(development_db_name) latest.dump

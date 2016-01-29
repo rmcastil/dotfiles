@@ -12,7 +12,6 @@
 # You can short-circuit this by setting the VIM_APP_DIR environment variable
 # or by un-commenting and editing the following line:
 # VIM_APP_DIR=/Applications
-
 if [ -z "$VIM_APP_DIR" ]
 then
 	myDir="`dirname "$0"`"

@@ -3,12 +3,13 @@
 set -e
 
 if [ $# -lt 1 ]; then
-  echo "usage: $(basename $0) <git_remote_name>" >&2
-  echo "example: heroku-db-sync production" >&2
+  echo "usage: $(basename $0) <git_remote_name> <heroku_app_name>" >&2
+  echo "example: heroku-db-sync production murming-water-1234" >&2
   exit 1
 fi
 
 readonly REMOTE=$1
+readonly HEROKU_APP=$2
 
 function development_db_name() {
   cat config/database.yml | \
@@ -26,8 +27,8 @@ function checkout_remote_repo_sha() {
 
 function restore_remote_db() {
   # need a flag to not backup
-  heroku pg:backups capture -r "$REMOTE"
-  curl -o latest.dump $(heroku pg:backups public-url -r $REMOTE)
+  heroku pg:backups capture -r "$HEROKU_APP"
+  curl -o latest.dump $(heroku pg:backups public-url -r $HEROKU_APP)
   pg_restore --verbose --clean --no-acl --no-owner -h localhost -d $(development_db_name) latest.dump
 }
 

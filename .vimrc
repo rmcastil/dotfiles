@@ -67,6 +67,8 @@ colorscheme solarized
 " ------------------------------------------------------------------------------
 " set max window height
 let g:CommandTMaxHeight=10
+" increase the number of files indexed
+let g:CommandTMaxFiles=50000
 " Reflush (reindex) on every command-t
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 " rails shortcuts for views, controllers, and models folders

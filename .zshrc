@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 # Load local config files
 for config_file in $(ls ~/.*.zsh)
 do
@@ -5,12 +7,11 @@ do
 done
 
 # Aliases
-alias vim="~/bin/mvim -v"
 alias l='ls -laG'
 alias gs='git status'
 alias h='cd ~/'
 alias d='cd $CODE'
-alias restart_pow='touch tmp/restart.txt'
+alias vim='nvim'
 
 # Enable the ctrl+s key for reverse i search
 stty -ixon

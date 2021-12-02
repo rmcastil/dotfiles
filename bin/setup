@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+
+set -e
+
+function link_dotfiles() {
+  echo 'Linking dotfiles'
+  for link in .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc; do
+    if [ -L "$HOME/$link" ]; then
+      echo "Link '$link' already exists"
+    else
+      ln -s "icloud-drive/dotfiles/$link" .
+    fi
+  done
+}
+
+function install_xcode() {
+  echo 'Ensure that we have xcode tools installed'
+  'xcode-select --install'
+}
+
+function install_homebrew() {
+  if command -v brew; then
+    echo "Homebrew installed; updating:"
+    brew update
+  else
+    echo "Installing Homebrew:"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # eval $(/opt/homebrew/bin/brew shellenv)
+  fi
+}
+
+function main() {
+  link_dotfiles
+  # install_xcode
+  install_homebrew
+  # install asdf
+}
+
+main

@@ -1,6 +1,6 @@
 export EDITOR=vim
 
-# Load local config files
+# Load local zsh config files
 for config_file in $(ls ~/.*.zsh)
 do
   source $config_file

@@ -2,13 +2,23 @@
 
 set -e
 
+function check_variable() {
+  if [ -L "$CODE" ]; then
+    echo "Code points to '$CODE'"
+  else
+    echo "Set the CODE variable before continuing."
+    exit 1
+  fi
+}
+
 function link_dotfiles() {
   echo 'Linking dotfiles'
   for link in .config .gemrc .gitconfig .irbrc .paths.zsh .rspec .zshenv .zshrc; do
     if [ -L "$HOME/$link" ]; then
       echo "Link '$link' already exists"
     else
-      ln -s "icloud-drive/dotfiles/$link" .
+      echo "Creating link to '$link'"
+      ln -s "$CODE/dotfiles/$link" .
     fi
   done
 }
@@ -29,11 +39,26 @@ function install_homebrew() {
   fi
 }
 
+function install_things() {
+  for pkg in asdf git neovim postgresql tree; do
+  if brew list -1 | grep -q "^${pkg}\$"; then
+    echo "Package '$pkg' is installed; updating:"
+    brew upgrade "$pkg" && brew cleanup "$pkg" || true
+  else
+    brew install "$pkg"
+  fi
+done
+}
+
 function main() {
+  check_variable
   link_dotfiles
   # install_xcode
   install_homebrew
-  # install asdf
+  install_things
+  # message to create pack directory and run mpack
+  # gem install bundler solargraph
+  # make sure the solargraph.yml fiile is in rails projects
 }
 
 main

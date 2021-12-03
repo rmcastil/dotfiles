@@ -62,6 +62,5 @@ function git_prompt_info() {
 PROMPT='[%1d] $(git_prompt_info)
 ~ '
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-source /usr/local/share/zsh/site-functions/_aws
+# asdf configuration
+. /usr/local/opt/asdf/libexec/asdf.sh

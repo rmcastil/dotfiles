@@ -50,13 +50,24 @@ function install_things() {
 done
 }
 
+function initialize_minpac_dir() {
+  #echo "Creating the minpac directory for vim plugins"
+  mkdir -p ~/.config/nvim/pack/minpac/opt
+  cd ~/.config/nvim/pack/minpac/opt
+  git clone https://github.com/k-takata/minpac.git
+  echo 'TODO: Open vim, source the .config/nvim/plugin.vim file, and call minpac#update()
+
+  Check out the thoughtbot video for instructions'
+}
+
 function main() {
   check_variable
   link_dotfiles
-  # install_xcode
+  install_xcode
   install_homebrew
   install_things
-  # message to create pack directory and run mpack
+  initialize_minpac_dir
+  # link ssh files
   # gem install bundler solargraph
   # make sure the solargraph.yml fiile is in rails projects
 }

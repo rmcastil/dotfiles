@@ -63,4 +63,7 @@ PROMPT='[%1d] $(git_prompt_info)
 ~ '
 
 # asdf configuration
-. /usr/local/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# brew path
+eval "$(/opt/homebrew/bin/brew shellenv)"

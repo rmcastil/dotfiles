@@ -3,7 +3,7 @@
 set -e
 
 function check_variable() {
-  if [ -L "$CODE" ]; then
+  if [ -d "$CODE" ]; then
     echo "Code points to '$CODE'"
   else
     echo "Set the CODE variable before continuing."

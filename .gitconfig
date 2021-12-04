@@ -5,10 +5,7 @@
         co = checkout
         iteration = log --pretty='tformat:%h (%ar) -- %d %s' --since='2 weeks ago' --author='rmcastil'
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        interactive = auto
+	ui = auto
 [core]
         excludesfile = ~/.gitignore
         editor = vim

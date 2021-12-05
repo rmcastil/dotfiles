@@ -13,7 +13,7 @@ function check_variable() {
 
 function link_dotfiles() {
   echo 'Linking dotfiles'
-  for link in .config .gemrc .gitconfig .irbrc .paths.zsh .rspec .zshenv .zshrc; do
+  for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc; do
     if [ -L "$HOME/$link" ]; then
       echo "Link '$link' already exists"
     else
@@ -21,6 +21,7 @@ function link_dotfiles() {
       ln -s "$CODE/dotfiles/$link" .
     fi
   done
+  cp $CODE/dotfiles/.paths.zsh $HOME/.paths.zsh
 }
 
 function install_xcode() {

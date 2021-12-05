@@ -8,7 +8,7 @@
 	ui = auto
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = nvim
         autocrlf = input
 [apply]
         whitespace = nowarn

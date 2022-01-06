@@ -41,7 +41,7 @@ function install_homebrew() {
 }
 
 function install_things() {
-  for pkg in asdf git lazygit neovim postgresql tree; do
+  for pkg in asdf git lazygit neovim postgresql ripgrep tree; do
   if brew list -1 | grep -q "^${pkg}\$"; then
     echo "Package '$pkg' is installed; updating:"
     brew upgrade "$pkg" && brew cleanup "$pkg" || true

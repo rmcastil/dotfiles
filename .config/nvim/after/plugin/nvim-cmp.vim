@@ -5,6 +5,9 @@ lua <<EOF
   local cmp = require'cmp'
 
   cmp.setup({
+    completion = {
+      autocomplete = false,
+    },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),

@@ -19,4 +19,12 @@ call minpac#add('neovim/nvim-lspconfig')
 call minpac#add('nvim-lua/plenary.nvim')              " Telescope dependency
 call minpac#add('nvim-telescope/telescope.nvim')
 
+" For LSP based syntax highlighting
 call minpac#add('nvim-treesitter/nvim-treesitter')
+
+" For LSP code completion
+call minpac#add('hrsh7th/cmp-nvim-lsp')
+call minpac#add('hrsh7th/cmp-buffer')
+call minpac#add('hrsh7th/cmp-path')
+call minpac#add('hrsh7th/cmp-cmdline')
+call minpac#add('hrsh7th/nvim-cmp')

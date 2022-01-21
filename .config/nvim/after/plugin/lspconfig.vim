@@ -1,4 +1,8 @@
 lua << EOF
+-- Set this if you want to view the lsp logs
+-- vim.lsp.set_log_level("debug")
+-- Then run lua vim.cmd('e'..vim.lsp.get_log_path()) to view the log
+
 local nvim_lsp = require('lspconfig')
 
   -- Use an on_attach function to only map the following keys

@@ -1,14 +1,16 @@
 [user]
-        name = Ryan Castillo
-        email = rmcastil@gmail.com
+       name = Ryan Castillo
+       email = rmcastil@gmail.com
 [alias]
-        co = checkout
-        iteration = log --pretty='tformat:%h (%ar) -- %d %s' --since='2 weeks ago' --author='rmcastil'
+       co = checkout
+       iteration = log --pretty='tformat:%h (%ar) -- %d %s' --since='2 weeks ago' --author='rmcastil'
 [color]
-	ui = auto
+       ui = auto
 [core]
         excludesfile = ~/.gitignore
         editor = nvim
         autocrlf = input
 [apply]
         whitespace = nowarn
+[push]
+        default = current

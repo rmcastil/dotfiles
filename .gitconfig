@@ -4,6 +4,8 @@
 [alias]
        co = checkout
        iteration = log --pretty='tformat:%h (%ar) -- %d %s' --since='2 weeks ago' --author='rmcastil'
+       save = !git add -A && git commit -m 'SAVEPOINT'
+       unsave = reset HEAD~1 --mixed
 [color]
        ui = auto
 [core]

@@ -43,6 +43,9 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
+# Increase the limit on number of files a process can open
+ulimit -n 1024
+
 # Force user to type exit or logout
 setopt ignoreeof
 

@@ -12,3 +12,9 @@ Run and see `bin/setup` for getting everything up and running with a new Mac. It
 * install homebrew.
 * install homebrew packages.
 * install nvim and instructions for installing vim plugins.
+
+To get Ruby LSP working you'll have to gem install the following gems for each Ruby
+you install with asdf.
+* gem install bundler
+* gem install solargraph
+* gem install solargraph-rails

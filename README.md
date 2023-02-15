@@ -18,3 +18,15 @@ you install with asdf.
 * gem install bundler
 * gem install solargraph
 * gem install solargraph-rails
+
+## Updates
+
+### Vim plugins
+
+To update your VIM plugins from VIM via minpac. NOTE that minpac utilizes git so
+if this process does not work you can go to each plugin in the
+`.config/nvim/pack/minpac/start` directory and do a `git fetch; git pull` from
+there.
+
+1. Call `source plugin.vim` which is located in the `.config/nvim` directory.
+2. Call `call minpac#update()` to update the sourced plugins.

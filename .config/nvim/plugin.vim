@@ -28,3 +28,6 @@ call minpac#add('hrsh7th/cmp-buffer')
 call minpac#add('hrsh7th/cmp-path')
 call minpac#add('hrsh7th/cmp-cmdline')
 call minpac#add('hrsh7th/nvim-cmp')
+
+" For Github's copilot
+call minpac#add('github/copilot.vim')

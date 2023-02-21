@@ -65,8 +65,9 @@ function git_prompt_info() {
 PROMPT='[%1d] $(git_prompt_info)
 ~ '
 
+# brew path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # asdf configuration
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# brew path
-eval "$(/opt/homebrew/bin/brew shellenv)"

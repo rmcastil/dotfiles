@@ -6,19 +6,19 @@ function check_variable() {
   if [ -d "$CODE" ]; then
     echo "Code points to '$CODE'"
   else
-    echo "Set the CODE variable before continuing."
+    echo "Set the $CODE to point to dotfiles directory before continuing."
     exit 1
   fi
 }
 
 function link_dotfiles() {
   echo 'Linking dotfiles'
-  for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc; do
+  for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc .default-gems; do
     if [ -L "$HOME/$link" ]; then
       echo "Link '$link' already exists"
     else
       echo "Creating link to '$link'"
-      ln -s "$CODE/dotfiles/$link" .
+      ln -s "$CODE/dotfiles/$link" $HOME/$link
     fi
   done
   cp $CODE/dotfiles/.paths.zsh $HOME/.paths.zsh

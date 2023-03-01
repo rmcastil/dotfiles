@@ -50,3 +50,12 @@ there.
 
 1. Call `source plugin.vim` which is located in the `.config/nvim` directory.
 2. Call `call minpac#update()` to update the sourced plugins.
+
+
+## Personal Prereqs
+I usually use this when setting up a new mac.
+
+1. Installation of XCode. Note that it has to be opened at least once
+to complete it's installation.
+2. Go through each setting for new configurations
+

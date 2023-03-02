@@ -1,4 +1,4 @@
 # Insert private paths here
 #
 # Example:
-# export CODE = $HOME/dev
+# export CODE=$HOME/dev

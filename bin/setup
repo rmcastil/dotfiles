@@ -22,6 +22,7 @@ function link_dotfiles() {
     fi
   done
   cp $CODE/dotfiles/.paths.zsh $HOME/.paths.zsh
+  echo "TODO: Populate ~/.paths.zsh with private paths."
 }
 
 function install_xcode() {

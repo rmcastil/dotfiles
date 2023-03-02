@@ -6,6 +6,8 @@ My dotfiles built from the ground up. Several of the things that I use:
 * asdf as my tool manager (rubies, nodes, etc).
 
 ## Setup
+Ideally you would git clone this repo but you may have to download the repo on a brand new mac.
+
 Run and see `bin/setup` for getting everything up and running with a new Mac. It will
 * link dotfiles to the home directory.
 * install xcode-select.

@@ -13,7 +13,7 @@ function check_variable() {
 
 function link_dotfiles() {
   echo 'Linking dotfiles'
-  for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc .default-gems; do
+  for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc .default-gems .default-npm-packages; do
     if [ -L "$HOME/$link" ]; then
       echo "Link '$link' already exists"
     else
@@ -70,7 +70,6 @@ function main() {
   install_things
   initialize_minpac_dir
   # link ssh files
-  # gem install bundler solargraph
   # make sure the solargraph.yml fiile is in rails projects
 }
 

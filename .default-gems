@@ -1,3 +1,5 @@
 bundler
+foreman
+rubocop
 solargraph
 solargraph-rails

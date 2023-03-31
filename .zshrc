@@ -1,11 +1,5 @@
 export EDITOR=vim
 
-# Load local zsh config files
-for config_file in $(ls ~/.*.zsh)
-do
-  source $config_file
-done
-
 # Aliases
 alias l='ls -laG'
 alias gs='git status'
@@ -71,3 +65,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # asdf configuration
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+# Load local zsh config files
+for config_file in $(ls ~/.*.zsh)
+do
+  source $config_file
+done

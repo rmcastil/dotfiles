@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-wc -l $GTD_DIR/*.txt | awk '/total/ {print $1}'

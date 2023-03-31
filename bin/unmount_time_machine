@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -e
-
-# Stop the Time Machine backup
-tmutil stopbackup
-
-# Unmount the Time Machine volume
-diskutil list | grep phoenix | awk '{print $NF}' | cut -c 1-5 | xargs diskutil unmountDisk

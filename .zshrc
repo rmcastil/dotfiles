@@ -70,3 +70,6 @@ for config_file in $(ls ~/.*.zsh)
 do
   source $config_file
 done
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

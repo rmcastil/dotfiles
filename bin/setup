@@ -43,13 +43,20 @@ function install_homebrew() {
 
 function install_things() {
   for pkg in asdf git lazygit neovim postgresql@14 ripgrep tree; do
-  if brew list -1 | grep -q "^${pkg}\$"; then
-    echo "Package '$pkg' is installed; updating:"
-    brew upgrade "$pkg" && brew cleanup "$pkg" || true
-  else
-    brew install "$pkg"
-  fi
-done
+    if brew list -1 | grep -q "^${pkg}\$"; then
+      echo "Package '$pkg' is installed; updating:"
+      brew upgrade "$pkg" && brew cleanup "$pkg" || true
+    else
+      brew install "$pkg"
+    fi
+  done
+}
+
+function install_nerd_fonts() {
+  echo "Installing hack font from Nerd fonts. See https://www.nerdfonts.com for more info."
+  brew tap homebrew/cask-fonts
+  brew install --cask font-hack-nerd-font
+  echo "Hack font installed. Select Hack Nerd Font (do not choose Mono) in your terminal of choice."
 }
 
 function initialize_minpac_dir() {
@@ -68,6 +75,7 @@ function main() {
   install_xcode
   install_homebrew
   install_things
+  install_nerd_fonts
   initialize_minpac_dir
   # link ssh files
   # make sure the solargraph.yml fiile is in rails projects

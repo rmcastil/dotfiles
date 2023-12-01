@@ -73,3 +73,11 @@ done
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# Herd injected PHP binary.
+export PATH="/Users/rmcastil/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/rmcastil/Library/Application Support/Herd/config/php/82/"

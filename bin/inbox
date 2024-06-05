@@ -1,3 +1,0 @@
-#!/bin/bash
-set -e
-echo "[]" `date "+%m/%d/%Y"` $* >> $GTD_DIR/inbox.txt

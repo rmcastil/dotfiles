@@ -3,74 +3,82 @@
 set -e
 
 function check_variable() {
-  if [ -d "$CODE" ]; then
-    echo "Code points to '$CODE'"
-  else
-    echo "Set the $CODE to point to dotfiles directory before continuing."
-    exit 1
-  fi
+	if [ -d "$CODE" ]; then
+		echo "Code points to '$CODE'"
+	else
+		echo "Set the $CODE to point to dotfiles directory before continuing."
+		exit 1
+	fi
 }
 
 function link_dotfiles() {
-  echo 'Linking dotfiles'
-  for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc .default-gems .default-npm-packages; do
-    if [ -L "$HOME/$link" ]; then
-      echo "Link '$link' already exists"
-    else
-      echo "Creating link to '$link'"
-      ln -s "$CODE/dotfiles/$link" $HOME/$link
-    fi
-  done
-  cp $CODE/dotfiles/.paths.zsh $HOME/.paths.zsh
-  echo "TODO: Populate ~/.paths.zsh with private paths."
+	echo 'Linking dotfiles'
+	for link in .config .gemrc .gitconfig .irbrc .rspec .zshenv .zshrc .default-gems .default-npm-packages; do
+		if [ -L "$HOME/$link" ]; then
+			echo "Link '$link' already exists"
+		else
+			echo "Creating link to '$link'"
+			ln -s "$CODE/dotfiles/$link" $HOME/$link
+		fi
+	done
+	cp $CODE/dotfiles/.paths.zsh $HOME/.paths.zsh
+	echo "TODO: Populate ~/.paths.zsh with private paths."
 }
 
 function install_xcode() {
-  echo 'Ensure that we have xcode tools installed'
-  'xcode-select --install'
+	echo 'Ensure that we have xcode tools installed'
+	'xcode-select --install'
 }
 
 function install_homebrew() {
-  if command -v brew; then
-    echo "Homebrew installed; updating:"
-    brew update
-  else
-    echo "Installing Homebrew:"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval $(/opt/homebrew/bin/brew shellenv)
-  fi
+	if command -v brew; then
+		echo "Homebrew installed; updating:"
+		brew update
+	else
+		echo "Installing Homebrew:"
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		eval $(/opt/homebrew/bin/brew shellenv)
+	fi
 }
 
 function install_things() {
-  for pkg in asdf git lazygit neovim postgresql@14 ripgrep tree; do
-  if brew list -1 | grep -q "^${pkg}\$"; then
-    echo "Package '$pkg' is installed; updating:"
-    brew upgrade "$pkg" && brew cleanup "$pkg" || true
-  else
-    brew install "$pkg"
-  fi
-done
+	for pkg in asdf git lazygit neovim postgresql@15 ripgrep tree; do
+		if brew list -1 | grep -q "^${pkg}\$"; then
+			echo "Package '$pkg' is installed; updating:"
+			brew upgrade "$pkg" && brew cleanup "$pkg" || true
+		else
+			brew install "$pkg"
+		fi
+	done
+}
+
+function install_nerd_fonts() {
+	echo "Installing hack font from Nerd fonts. See https://www.nerdfonts.com for more info."
+	brew tap homebrew/cask-fonts
+	brew install --cask font-hack-nerd-font
+	echo "Hack font installed. Select Hack Nerd Font (do not choose Mono) in your terminal of choice."
 }
 
 function initialize_minpac_dir() {
-  #echo "Creating the minpac directory for vim plugins"
-  mkdir -p ~/.config/nvim/pack/minpac/opt
-  cd ~/.config/nvim/pack/minpac/opt
-  git clone https://github.com/k-takata/minpac.git
-  echo 'TODO: Open vim, source the .config/nvim/plugin.vim file, and call minpac#update()
+	#echo "Creating the minpac directory for vim plugins"
+	mkdir -p ~/.config/nvim/pack/minpac/opt
+	cd ~/.config/nvim/pack/minpac/opt
+	git clone https://github.com/k-takata/minpac.git
+	echo 'TODO: Open vim, source the .config/nvim/plugin.vim file, and call minpac#update()
 
   Check out the thoughtbot video for instructions'
 }
 
 function main() {
-  check_variable
-  link_dotfiles
-  install_xcode
-  install_homebrew
-  install_things
-  initialize_minpac_dir
-  # link ssh files
-  # make sure the solargraph.yml fiile is in rails projects
+	check_variable
+	link_dotfiles
+	install_xcode
+	install_homebrew
+	install_things
+	install_nerd_fonts
+	initialize_minpac_dir
+	# link ssh files
+	# make sure the solargraph.yml fiile is in rails projects
 }
 
 main

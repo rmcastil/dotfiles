@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-
-cd $GTD_DIR
-leader_f='nnoremap <leader>f 0ax:w<cr>'
-mvim -v *.txt -c ":b todo" -c "$leader_f"

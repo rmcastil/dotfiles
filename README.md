@@ -45,14 +45,7 @@ npm install --globarl yarn
 
 ### Vim plugins
 
-To update your VIM plugins from VIM via minpac. NOTE that minpac utilizes git so
-if this process does not work you can go to each plugin in the
-`.config/nvim/pack/minpac/start` directory and do a `git fetch; git pull` from
-there.
-
-1. Call `source plugin.vim` which is located in the `.config/nvim` directory.
-2. Call `call minpac#update()` to update the sourced plugins.
-
+Handling updates via lazy.nvim in the lazyvim interface
 
 ## Personal Prereqs
 I usually use this when setting up a new mac.

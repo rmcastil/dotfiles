@@ -86,3 +86,5 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
+
+eval "$(zoxide init zsh)"

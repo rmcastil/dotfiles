@@ -42,7 +42,7 @@ function install_homebrew() {
 }
 
 function install_things() {
-	for pkg in asdf git lazygit neovim postgresql@15 ripgrep tree; do
+	for pkg in asdf flyctl git heroku lazygit neovim postgresql@15 ripgrep stripe tree zoxide; do
 		if brew list -1 | grep -q "^${pkg}\$"; then
 			echo "Package '$pkg' is installed; updating:"
 			brew upgrade "$pkg" && brew cleanup "$pkg" || true

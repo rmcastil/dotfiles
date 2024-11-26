@@ -59,16 +59,6 @@ function install_nerd_fonts() {
 	echo "Hack font installed. Select Hack Nerd Font (do not choose Mono) in your terminal of choice."
 }
 
-function initialize_minpac_dir() {
-	#echo "Creating the minpac directory for vim plugins"
-	mkdir -p ~/.config/nvim/pack/minpac/opt
-	cd ~/.config/nvim/pack/minpac/opt
-	git clone https://github.com/k-takata/minpac.git
-	echo 'TODO: Open vim, source the .config/nvim/plugin.vim file, and call minpac#update()
-
-  Check out the thoughtbot video for instructions'
-}
-
 function main() {
 	check_variable
 	link_dotfiles
@@ -76,7 +66,6 @@ function main() {
 	install_homebrew
 	install_things
 	install_nerd_fonts
-	initialize_minpac_dir
 	# link ssh files
 	# make sure the solargraph.yml fiile is in rails projects
 }

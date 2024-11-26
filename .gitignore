@@ -2,3 +2,5 @@
 .config/nvim/pack/
 .config/github-copilot/hosts.json
 AppSupport
+.config/.DS_Store
+.config/stripe/config.toml
